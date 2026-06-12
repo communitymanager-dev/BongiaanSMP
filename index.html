@@ -1,301 +1,51 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BongiaanSMP</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
-}
-
-body{
-    background:#09090b;
-    color:white;
-    overflow-x:hidden;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:#22c55e;
-    filter:blur(250px);
-    top:-200px;
-    left:-150px;
-    opacity:.2;
-    z-index:-1;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:#3b82f6;
-    filter:blur(250px);
-    bottom:-200px;
-    right:-150px;
-    opacity:.2;
-    z-index:-1;
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 8%;
-    backdrop-filter:blur(10px);
-}
-
-.logo{
-    font-size:2rem;
-    font-weight:800;
-    color:#22c55e;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#22c55e;
-}
-
-.hero{
-    min-height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
-
-.hero h1{
-    font-size:5rem;
-    font-weight:800;
-    background:linear-gradient(90deg,#22c55e,#3b82f6);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-    margin-top:15px;
-    color:#cfcfcf;
-    font-size:1.2rem;
-    max-width:650px;
-}
-
-.buttons{
-    margin-top:35px;
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:14px 28px;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
-    font-size:1rem;
-    font-weight:700;
-    transition:.3s;
-}
-
-.primary{
-    background:#22c55e;
-    color:white;
-}
-
-.primary:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 25px #22c55e;
-}
-
-.secondary{
-    background:#18181b;
-    border:1px solid #2e2e2e;
-    color:white;
-}
-
-.secondary:hover{
-    transform:translateY(-3px);
-}
-
-.status{
-    margin-top:30px;
-    background:#18181b;
-    border:1px solid #2e2e2e;
-    padding:15px 25px;
-    border-radius:15px;
-}
-
-.features{
-    padding:80px 8%;
-}
-
-.section-title{
-    text-align:center;
-    font-size:2.5rem;
-    margin-bottom:50px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(255,255,255,.08);
-    padding:30px;
-    border-radius:20px;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    border-color:#22c55e;
-}
-
-.card h3{
-    margin-bottom:10px;
-}
-
-footer{
-    text-align:center;
-    padding:40px;
-    color:#999;
-    border-top:1px solid #1f1f1f;
-}
-
-.online{
-    color:#22c55e;
-}
-
-@media(max-width:768px){
-    .hero h1{
-        font-size:3rem;
-    }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<nav>
-    <div class="logo">BongiaanSMP</div>
+<div class="bg"></div>
+<div class="overlay"></div>
 
-    <div>
-        <a href="#features">Features</a>
-        <a href="#discord">Discord</a>
-    </div>
-</nav>
-
-<section class="hero">
+<div class="hero">
 
     <h1>BongiaanSMP</h1>
+    <p>A modern Minecraft SMP with economy, events and more.</p>
 
-    <p>
-        Ein moderner Minecraft SMP mit Economy,
-        Events, Shops und einer aktiven Community.
-    </p>
+    <div>
+        <button class="btn green" onclick="copyIP()">Copy IP</button>
 
-    <div class="buttons">
-        <button class="btn primary" onclick="copyIP()">
-            IP Kopieren
-        </button>
-
-        <a href="https://discord.gg/deininvite">
-            <button class="btn secondary">
-                Discord
-            </button>
+        <a href="https://discord.gg/YOUR_LINK">
+            <button class="btn dark">Discord</button>
         </a>
     </div>
 
-    <div class="status">
-        🌐 IP: <b>play.bongiaansmp.net</b>
-        <br><br>
-        <span class="online">● Online</span>
-        <span id="players">Loading...</span>
+    <div class="card">
+        🌐 play.bongiaansmp.net<br>
+        👥 <span id="players">Loading...</span>
     </div>
 
-</section>
+</div>
 
-<section class="features" id="features">
+<div class="section">
 
-    <h2 class="section-title">Warum BongiaanSMP?</h2>
+    <h2>Features</h2>
 
     <div class="grid">
-
-        <div class="card">
-            <h3>⚔️ Survival</h3>
-            <p>Ein ausgeglichenes Survival Erlebnis ohne Pay2Win.</p>
-        </div>
-
-        <div class="card">
-            <h3>💰 Economy</h3>
-            <p>Verdiene Geld und baue dein eigenes Imperium auf.</p>
-        </div>
-
-        <div class="card">
-            <h3>🏪 Shops</h3>
-            <p>Handle mit anderen Spielern und erstelle Shops.</p>
-        </div>
-
-        <div class="card">
-            <h3>🎉 Events</h3>
-            <p>Regelmäßige Events mit coolen Belohnungen.</p>
-        </div>
-
+        <div class="card">⚔️ Survival</div>
+        <div class="card">💰 Economy</div>
+        <div class="card">🏪 Player Shops</div>
+        <div class="card">🎉 Events</div>
     </div>
 
-</section>
+</div>
 
-<footer>
-    © 2026 BongiaanSMP • Alle Rechte vorbehalten
-</footer>
-
-<script>
-
-function copyIP(){
-    navigator.clipboard.writeText("play.bongiaansmp.net");
-
-    alert("IP wurde kopiert!");
-}
-
-fetch("https://api.mcsrvstat.us/2/play.bongiaansmp.net")
-.then(res => res.json())
-.then(data => {
-
-    if(data.players){
-        document.getElementById("players").innerHTML =
-        " | Spieler Online: " + data.players.online;
-    }
-    else{
-        document.getElementById("players").innerHTML =
-        " | Server Offline";
-    }
-
-})
-.catch(()=>{
-    document.getElementById("players").innerHTML =
-    " | Status nicht verfügbar";
-});
-
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
