@@ -6,46 +6,88 @@
 <title>BongiaanSMP</title>
 
 <link rel="stylesheet" href="style.css">
+
+<!-- Scroll animation library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="bg"></div>
+<!-- LOADING SCREEN -->
+<div id="loader">
+    <div class="spinner"></div>
+    <p>Loading BongiaanSMP...</p>
+</div>
+
+<!-- BACKGROUND VIDEO -->
+<video autoplay muted loop id="bg-video">
+    <source src="https://cdn.coverr.co/videos/coverr-minecraft-landscape-7611/1080p.mp4" type="video/mp4">
+</video>
+
 <div class="overlay"></div>
 
-<div class="hero">
+<!-- PARTICLES -->
+<div id="particles-js"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">BongiaanSMP</div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#join">Join</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero" data-aos="fade-up">
 
     <h1>BongiaanSMP</h1>
-    <p>A modern Minecraft SMP with economy, events and more.</p>
+    <p>A next-gen Minecraft SMP with events, economy and a strong community.</p>
 
-    <div>
+    <div class="buttons">
         <button class="btn green" onclick="copyIP()">Copy IP</button>
-
-        <a href="https://discord.gg/YOUR_LINK">
-            <button class="btn dark">Discord</button>
-        </a>
+        <a href="https://discord.gg/YOUR_LINK"><button class="btn dark">Discord</button></a>
     </div>
 
-    <div class="card">
-        🌐 bongiaanSMP.minehut.gg<br>
-        👥 <span id="players">Loading...</span>
-    </div>
+</section>
 
-</div>
+<!-- FEATURES -->
+<section id="features" class="section">
 
-<div class="section">
-
-    <h2>Features</h2>
+    <h2 data-aos="fade-up">Features</h2>
 
     <div class="grid">
-        <div class="card">⚔️ Survival</div>
-        <div class="card">💰 Economy</div>
-        <div class="card">🏪 Player Shops</div>
-        <div class="card">🎉 Events</div>
+
+        <div class="card" data-aos="zoom-in">⚔️ Survival</div>
+        <div class="card" data-aos="zoom-in">💰 Economy</div>
+        <div class="card" data-aos="zoom-in">🏪 Player Shops</div>
+        <div class="card" data-aos="zoom-in">🎉 Events</div>
+
     </div>
 
-</div>
+</section>
+
+<!-- JOIN -->
+<section id="join" class="section" data-aos="fade-up">
+
+    <h2>Join Now</h2>
+
+    <div class="card">
+        IP: <b>play.bongiaansmp.net</b><br><br>
+        <button class="btn green" onclick="copyIP()">Copy IP</button>
+    </div>
+
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 <script src="script.js"></script>
+
 </body>
 </html>
