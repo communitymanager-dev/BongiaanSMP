@@ -1,93 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BongiaanSMP</title>
-
-<link rel="stylesheet" href="style.css">
-
-<!-- Scroll animation library -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BongiaanSMP - Premium Minecraft Server</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-
-<!-- LOADING SCREEN -->
-<div id="loader">
-    <div class="spinner"></div>
-    <p>Loading BongiaanSMP...</p>
-</div>
-
-<!-- BACKGROUND VIDEO -->
-<video autoplay muted loop id="bg-video">
-    <source src="https://cdn.coverr.co/videos/coverr-minecraft-landscape-7611/1080p.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
-<!-- PARTICLES -->
-<div id="particles-js"></div>
-
-<!-- NAVBAR -->
-<nav>
-    <div class="logo">BongiaanSMP</div>
-
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#join">Join</a>
-    </div>
-</nav>
-
-<!-- HERO -->
-<section id="home" class="hero" data-aos="fade-up">
-
-    <h1>BongiaanSMP</h1>
-    <p>A next-gen Minecraft SMP with events, economy and a strong community.</p>
-
-    <div class="buttons">
-        <button class="btn green" onclick="copyIP()">Copy IP</button>
-        <a href="https://discord.gg/YOUR_LINK"><button class="btn dark">Discord</button></a>
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Loading BongiaanSMP...</p>
     </div>
 
-</section>
+    <!-- VIDEO BACKGROUND -->
+    <video autoplay muted loop id="bg-video">
+        <source src="https://cdn.coverr.co/videos/coverr-minecraft-landscape-7611/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div id="particles-js"></div>
 
-<!-- FEATURES -->
-<section id="features" class="section">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-cube"></i>
+                BongiaanSMP
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#info">Server Info</a>
+                <a href="#rules">Rules</a>
+                <a href="#join">Join</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <h2 data-aos="fade-up">Features</h2>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero" data-aos="fade-up">
+        <div class="hero-content">
+            <h1 class="title-animated">BONGIAANSMP</h1>
+            <p class="subtitle">Premium Minecraft SMP Experience</p>
+            <p class="description">Join a vibrant community with epic adventures, economy gameplay, and unforgettable events!</p>
+            
+            <div class="ip-display" data-aos="zoom-in">
+                <span class="ip-label">🌐 Server IP</span>
+                <span class="ip-address">bongiaanSMP.minehut.gg</span>
+                <button class="btn primary" onclick="copyIP()">📋 Copy IP</button>
+            </div>
 
-    <div class="grid">
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+                <button class="btn primary" onclick="document.getElementById('join').scrollIntoView({behavior: 'smooth'})">🎮 Join Server</button>
+                <a href="https://discord.gg/6d8GPD9ym4" target="_blank"><button class="btn secondary">💬 Discord</button></a>
+            </div>
+        </div>
+        <div class="hero-icon" data-aos="fade-left" data-aos-delay="300">
+            <i class="fas fa-crown"></i>
+        </div>
+    </section>
 
-        <div class="card" data-aos="zoom-in">⚔️ Survival</div>
-        <div class="card" data-aos="zoom-in">💰 Economy</div>
-        <div class="card" data-aos="zoom-in">🏪 Player Shops</div>
-        <div class="card" data-aos="zoom-in">🎉 Events</div>
+    <!-- FEATURES SECTION -->
+    <section id="features" class="section features-section">
+        <h2 data-aos="fade-up">✨ Amazing Features</h2>
+        <div class="features-grid">
+            <div class="feature-card" data-aos="zoom-in">
+                <div class="feature-icon">⚔️</div>
+                <h3>Survival Mode</h3>
+                <p>Classic survival gameplay with enhanced mechanics and challenges</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="feature-icon">💰</div>
+                <h3>Economy System</h3>
+                <p>Buy, sell, and trade with other players in a thriving economy</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="feature-icon">🏪</div>
+                <h3>Player Shops</h3>
+                <p>Create your own shop and become a successful merchant</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="feature-icon">🎉</div>
+                <h3>Regular Events</h3>
+                <p>Participate in epic events with amazing prizes and rewards</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="feature-icon">👥</div>
+                <h3>Strong Community</h3>
+                <p>Play with friendly players and build lasting friendships</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="feature-icon">🏆</div>
+                <h3>Leaderboards</h3>
+                <p>Compete with others and earn prestigious achievements</p>
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <!-- SERVER INFO SECTION -->
+    <section id="info" class="section info-section" data-aos="fade-up">
+        <h2>📊 Server Information</h2>
+        <div class="info-grid">
+            <div class="info-card" data-aos="flip-left">
+                <h3>Version</h3>
+                <p class="info-value">1.21.11</p>
+            </div>
+            <div class="info-card" data-aos="flip-left" data-aos-delay="100">
+                <h3>Max Players</h3>
+                <p class="info-value">5+ Players</p>
+            </div>
+            <div class="info-card" data-aos="flip-left" data-aos-delay="200">
+                <h3>Difficulty</h3>
+                <p class="info-value">Hard</p>
+            </div>
+            <div class="info-card" data-aos="flip-left" data-aos-delay="300">
+                <h3>Hosting</h3>
+                <p class="info-value">Minehut</p>
+            </div>
+            <div class="info-card" data-aos="flip-left" data-aos-delay="400">
+                <h3>Type</h3>
+                <p class="info-value">SMP</p>
+            </div>
+            <div class="info-card" data-aos="flip-left" data-aos-delay="500">
+                <h3>Status</h3>
+                <p class="info-value" style="color: #22c55e;">🟢 Online</p>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <!-- RULES SECTION -->
+    <section id="rules" class="section rules-section">
+        <h2 data-aos="fade-up">📋 Server Rules</h2>
+        <div class="rules-container">
+            <div class="rules-list" data-aos="fade-right">
+                <div class="rule-item">
+                    <span class="rule-number">1.</span>
+                    <div>
+                        <h4>Be Respectful</h4>
+                        <p>Treat all players with kindness and respect. No harassment or bullying.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">2.</span>
+                    <div>
+                        <h4>🔨 Griefing is Allowed</h4>
+                        <p>Griefing is permitted! Defend your base and prepare for attacks from other players!</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">3.</span>
+                    <div>
+                        <h4>No Cheating</h4>
+                        <p>Hacked clients, mods that give unfair advantages, and exploits are forbidden.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">4.</span>
+                    <div>
+                        <h4>Keep Chat Clean</h4>
+                        <p>No spam, racism, or inappropriate language in chat.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">5.</span>
+                    <div>
+                        <h4>Follow Admin Decisions</h4>
+                        <p>Admins have the final say in disputes. Their decisions are final.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">6.</span>
+                    <div>
+                        <h4>No X-raying</h4>
+                        <p>Using resource packs or mods that reveal ores/caves is not allowed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- JOIN -->
-<section id="join" class="section" data-aos="fade-up">
+    <!-- JOIN SECTION -->
+    <section id="join" class="section join-section" data-aos="fade-up">
+        <h2>🎮 How to Join</h2>
+        <div class="join-steps">
+            <div class="step" data-aos="fade-up">
+                <div class="step-number">1</div>
+                <h3>Copy IP Address</h3>
+                <p>Click the button below to copy our server IP</p>
+                <button class="btn primary" onclick="copyIP()">📋 bongiaanSMP.minehut.gg</button>
+            </div>
+            <div class="step" data-aos="fade-up" data-aos-delay="100">
+                <div class="step-number">2</div>
+                <h3>Open Minecraft</h3>
+                <p>Launch your Minecraft Java Edition client</p>
+            </div>
+            <div class="step" data-aos="fade-up" data-aos-delay="200">
+                <div class="step-number">3</div>
+                <h3>Add Server</h3>
+                <p>Go to "Add Server" and paste the IP address</p>
+            </div>
+            <div class="step" data-aos="fade-up" data-aos-delay="300">
+                <div class="step-number">4</div>
+                <h3>Join & Have Fun!</h3>
+                <p>Click "Join Server" and welcome to BongiaanSMP!</p>
+            </div>
+        </div>
+        
+        <div class="join-cta" data-aos="zoom-in">
+            <h3>Ready to join?</h3>
+            <p>Join thousands of players already enjoying BongiaanSMP</p>
+            <button class="btn primary large" onclick="copyIP()">🚀 Copy IP & Join Now</button>
+            <a href="https://discord.gg/6d8GPD9ym4" target="_blank" class="btn secondary large">💬 Join Our Discord</a>
+        </div>
+    </section>
 
-    <h2>Join Now</h2>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>BongiaanSMP</h4>
+                <p>A premium Minecraft SMP experience for everyone</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#rules">Rules</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://discord.gg/6d8GPD9ym4" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BongiaanSMP. All rights reserved. | IP: <strong>bongiaanSMP.minehut.gg</strong></p>
+        </div>
+    </footer>
 
-    <div class="card">
-        IP: <b>bongiaanSMP.minehut.gg</b><br><br>
-        <button class="btn green" onclick="copyIP()">Copy IP</button>
-    </div>
-
-</section>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
-
-<!-- Particles.js -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-<script src="script.js"></script>
-
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
